@@ -66,6 +66,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+              "hmr": false 
+             },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
@@ -98,10 +101,16 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            },
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3103418d-6789-4a74-b857-664aad7534ad"
   }
 }
