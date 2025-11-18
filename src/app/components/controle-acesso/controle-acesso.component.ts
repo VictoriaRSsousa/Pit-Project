@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule, LockIcon,LockOpenIcon } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 
 
@@ -11,6 +11,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './controle-acesso.component.scss'
 })
 export class ControleAcessoComponent {
-  @Input() locks: any[] = [];
+  readonly lockIcon = LockIcon;
+  readonly lockOpenIcon = LockOpenIcon;
+  
+  @Input() locks: any[] = [
+    { id: 1, name: 'Porta da Frente', locked: true },
+    { id: 2, name: 'Porta dos Fundos', locked: false },
+    { id: 3, name: 'Porta da Garagem', locked: true }
+  ];
   @Input() toggleLock!: (id: number) => void;
+
+
 }

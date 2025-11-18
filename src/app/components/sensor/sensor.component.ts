@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule,MenuIcon, WifiIcon } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,4 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class SensorComponent {
   @Input() presenceDetected = false;
+  readonly menuIcon = MenuIcon;
+  readonly wifiIcon = WifiIcon;
 }

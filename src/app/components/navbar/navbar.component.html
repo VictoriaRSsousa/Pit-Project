@@ -1,4 +1,4 @@
-  <nav class="sticky top-0 z-50 w-full bg-dark-card/70 backdrop-blur-md border-b border-neon-blue/20">
+  <nav class="sticky top-0 z-50 w-full bg-[#110953]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
@@ -6,14 +6,21 @@
 
           <!-- CPU ICON -->
           <lucide-icon 
-            name="cpu" 
+            [img]="cpuIcon" 
             class="w-8 h-8 text-neon-blue">
           </lucide-icon>
 
           <span class="font-bold text-xl text-white">SmartHome IoT</span>
         </div>
-
-        <div class="flex items-center"></div>
+        @if (!isLoggedIn) {
+          <div class="flex items-center">
+            <button 
+              class="text-white bg-neon-blue hover:bg-neon-blue/80 px-4 py-2 rounded-lg font-medium transition"
+              (click)="handleLogout()">
+              Sair
+            </button>
+          </div>
+        }
       </div>
     </div>
   </nav>

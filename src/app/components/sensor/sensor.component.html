@@ -1,23 +1,23 @@
-<div class="bg-dark-card rounded-2xl shadow-lg hover:shadow-neon-blue/20 hover:shadow-2xl overflow-hidden p-6 flex flex-col items-center justify-center min-h-[200px]">
+<div class=" text-center  bg-dark-card rounded-2xl shadow-lg hover:shadow-neon-blue/20 hover:shadow-2xl overflow-hidden p-6 flex flex-col items-center justify-center min-h-[200px]">
   <h2 class="text-lg font-semibold text-white mb-4">Sensor de Presença</h2>
   
   <div class="flex-grow flex flex-col items-center justify-center space-y-3">
 
-    <lucide-icon 
-      name="signal-high"
-      class="w-16 h-16"
-      [ngClass]="presenceDetected ? 'text-green-400' : 'text-medium-gray'">
-    </lucide-icon>
+    <span-lucide 
+      [img]="wifiIcon"
+      class="w-20 h-20"
+      [ngClass]="presenceDetected ? 'text-green-400' : 'text-red-600'">
+    </span-lucide>
 
     <span 
       class="text-xl font-bold"
-      [ngClass]="presenceDetected ? 'text-green-400' : 'text-medium-gray'">
+      [ngClass]="presenceDetected ? 'text-green-400' : 'text-red-600'">
       {{ presenceDetected ? 'Presença Detectada' : 'Ambiente Vazio' }}
     </span>
 
     <div 
       *ngIf="presenceDetected" 
-      class="absolute w-16 h-16 bg-green-400/20 rounded-full animate-ping">
+      class="absolute w-20 h-20 bg-green-400/20 rounded-full animate-ping">
     </div>
   </div>
 </div>

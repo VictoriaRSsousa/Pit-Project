@@ -1,31 +1,23 @@
-<div class="bg-dark-card rounded-2xl shadow-lg hover:shadow-neon-blue/20 hover:shadow-2xl overflow-hidden p-6">
-  <h2 class="text-lg font-semibold text-white mb-4">Controle de Acesso</h2>
+<div class="bg-dark-card text-white rounded-2xl shadow-lg hover:shadow-neon-blue/20 hover:shadow-2xl overflow-hidden p-6">
+  <h2 class="text-lg text-center  font-semibold mb-4">Controle de Acesso</h2>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div class="grid grid-cols-1 gap-4">
     
     <div *ngFor="let lock of locks">
       <button 
         (click)="toggleLock(lock.id)"
-        class="w-full p-4 rounded-lg flex items-center justify-between transition-all duration-200"
+        class="w-full p-4 rounded-lg md:flex items-center justify-start md:justify-between transition-all duration-200"
         [ngClass]="{
-          'bg-neon-blue text-white shadow-lg shadow-neon-blue/30': !lock.locked,
+          'bg-neon-blue  shadow-lg shadow-neon-blue/30': !lock.locked,
           'bg-dark-bg/50 hover:bg-dark-bg': lock.locked
         }">
 
-        <lucide-icon 
-          [name]="lock.locked ? 'lock' : 'unlock'"
+        <lucide-angular
+          [img]="lock.locked ? lockIcon : lockOpenIcon"
           class="w-6 h-6">
-        </lucide-icon>
+        </lucide-angular>
 
         <span class="font-medium">{{ lock.name }}</span>
-
-        <span class="text-sm font-bold uppercase"
-          [ngClass]="{
-            'text-white': !lock.locked,
-            'text-medium-gray': lock.locked
-          }">
-          {{ lock.locked ? 'Trancado' : 'Aberto' }}
-        </span>
       </button>
     </div>
 

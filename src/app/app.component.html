@@ -1,14 +1,11 @@
-<div class="min-h-screen flex flex-col bg-dark-bg text-light-gray">
+<div class="min-h-screen flex flex-col text-light-gray">
 
-  <!-- NAVBAR -->
-  <app-navbar></app-navbar>
+  <app-navbar [logout]="logout.bind(this)"></app-navbar>
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main class=" bg-dark-card/70 backdrop-blur-md flex-1 container mx-auto px-4 py-6 sm:px-6 lg:px-8 ">
+  <main class=" bg-[#000028] flex-1 backdrop-blur-md ">
       <router-outlet></router-outlet>
   </main>
 
-  <!-- FOOTER -->
-  <app-footer></app-footer>
+  <app-footer ></app-footer>
 
 </div>

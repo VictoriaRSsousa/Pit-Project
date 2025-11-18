@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule, VideoIcon } from 'lucide-angular';
 
 @Component({
   selector: 'app-camera',
@@ -7,4 +7,6 @@ import { LucideAngularModule } from 'lucide-angular';
   imports: [LucideAngularModule],
   templateUrl: './camera.component.html'
 })
-export class CameraComponent {}
+export class CameraComponent {
+  readonly videoIcon = VideoIcon;
+}
