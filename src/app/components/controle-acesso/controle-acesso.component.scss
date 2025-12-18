@@ -1,0 +1,7 @@
+button {
+  will-change: transform;
+}
+
+button:active {
+  transform: scale(0.97);
+}

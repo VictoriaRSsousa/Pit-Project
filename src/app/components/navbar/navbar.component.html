@@ -1,26 +1,28 @@
-  <nav class="sticky top-0 z-50 w-full bg-[#110953]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        
-        <div class="flex items-center space-x-3">
+<nav class="sticky top-0 z-50 w-full bg-dark-navbar border-b border-[#1A233A] shadow-[0_4px_30px_rgba(0,231,249,0.05)] backdrop-blur-md">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <div class="flex items-center space-x-3">
+        <lucide-icon 
+          [img]="cpuIcon" 
+          class="w-8 h-8 text-neon-blue hover-glow">
+        </lucide-icon>
 
-          <!-- CPU ICON -->
-          <lucide-icon 
-            [img]="cpuIcon" 
-            class="w-8 h-8 text-neon-blue">
-          </lucide-icon>
-
-          <span class="font-bold text-xl text-white">SmartHome IoT</span>
-        </div>
-        @if (!isLoggedIn) {
-          <div class="flex items-center">
-            <button 
-              class="text-white bg-neon-blue hover:bg-neon-blue/80 px-4 py-2 rounded-lg font-medium transition"
-              (click)="handleLogout()">
-              Sair
-            </button>
-          </div>
-        }
+        <span class="font-bold text-xl text-white hover-glow cursor-pointer">
+          SmartHome IoT
+        </span>
       </div>
+
+      <!-- @if (!isLoggedIn) {
+        <div class="flex items-center">
+          <button 
+            class="text-dark-navbar bg-neon-blue hover:shadow-[0_0_12px_rgba(0,231,249,0.6)] px-4 py-2 rounded-lg font-semibold transition-all duration-200"
+            (click)="handleLogout()">
+            Sair
+          </button>
+        </div>
+      } -->
+
     </div>
-  </nav>
+  </div>
+</nav>

@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { LucideAngularModule,MenuIcon, WifiIcon } from 'lucide-angular';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { LucideAngularModule, RadarIcon, ActivityIcon, CircleAlertIcon } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,7 +9,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sensor.component.html'
 })
 export class SensorComponent {
-  @Input() presenceDetected = false;
-  readonly menuIcon = MenuIcon;
-  readonly wifiIcon = WifiIcon;
+
+  @Input() presenceDetected: boolean = false;
+  @Output() presenceChanged = new EventEmitter<boolean>();
+
+  readonly personStandingIcon = CircleAlertIcon;
+  readonly radarIcon = RadarIcon;
 }

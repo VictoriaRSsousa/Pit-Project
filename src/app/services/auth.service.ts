@@ -7,7 +7,7 @@ export class AuthService {
 
   router = new Router();
   login({ email, senha }: any) {
-    if (email === 'admin@iot.com' && senha === '123456') {
+    if (email === 'admin@email.com' && senha === '123456') {
       localStorage.setItem('token', 'FAKE_TOKEN_IOT');
       this.router.navigate(['/']);
       return of(true).pipe(delay(1500));

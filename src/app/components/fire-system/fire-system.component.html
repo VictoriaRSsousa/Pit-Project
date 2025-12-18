@@ -1,0 +1,40 @@
+<div
+  class="p-6 rounded-2xl transition duration-300 text-white border border-red-700 shadow-lg shadow-red-900/40"
+  [class.bg-red-700]="incendioAtivo"
+  [class.bg-red-900]="!incendioAtivo"
+  [class.animate-pulse]="incendioAtivo"
+>
+
+  <div class="flex items-center gap-4">
+    
+    <lucide-angular 
+      [img]="flameIcon"
+      class="w-10 h-10"
+      [class.text-yellow-300]="incendioAtivo"
+      [class.text-red-300]="!incendioAtivo"
+    ></lucide-angular>
+
+    <div class="text-lg font-bold tracking-wide">
+      Sistema Anti-Incêndio
+    </div>
+  </div>
+
+  <p class="mt-2 text-sm opacity-80">
+    Status: 
+    <span class="font-semibold"
+      [class.text-yellow-300]="incendioAtivo"
+      [class.text-white]="!incendioAtivo">
+      {{ incendioAtivo ? '⚠ Ativado' : 'Desligado' }}
+    </span>
+  </p>
+
+  <button
+    (click)="onClick()"
+    class="mt-4 px-4 py-2 rounded-lg w-full font-semibold text-black transition duration-300"
+    [class.bg-yellow-300]="incendioAtivo"
+    [class.bg-white]="!incendioAtivo"
+  >
+    {{ incendioAtivo ? 'Desativar Sistema' : 'Ativar Sistema' }}
+  </button>
+
+</div>

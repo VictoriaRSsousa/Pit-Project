@@ -1,0 +1,8 @@
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px rgba(255, 0, 0, 0.6); }
+  50% { box-shadow: 0 0 10px rgba(255, 0, 0, 1); }
+}
+
+.animate-pulse {
+  animation: pulse-glow 1.2s infinite;
+}

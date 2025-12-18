@@ -1,0 +1,9 @@
+.animate-pulse {
+  animation: pulseAlert 1s infinite;
+}
+
+@keyframes pulseAlert {
+  0% { box-shadow: 0 0 15px rgba(255, 0, 0, .5); }
+  50% { box-shadow: 0 0 40px rgba(255, 0, 0, .9); }
+  100% { box-shadow: 0 0 15px rgba(255, 0, 0, .5); }
+}
